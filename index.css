@@ -1,14 +1,24 @@
+/* Réinitialiser les styles de base pour les marges et les bordures */
+body, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Styles par défaut pour les grands écrans */
 body {
     background-color: #000000;
     font-size: 16px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    padding: 10px;
 }
 
 /* Styles pour les écrans de taille moyenne */
 @media (max-width: 768px) {
     body {
         font-size: 14px;
-        background-color: #000000;
     }
 }
 
@@ -16,39 +26,75 @@ body {
 @media (max-width: 480px) {
     body {
         font-size: 12px;
-        background-color: #000000;
     }
-}  
-
-img {
-    max-width: 100%;
-    height: auto;
 }
 
+/* Style des titres */
 h1 {
     color: gold;
     text-align: center;
 }
 
+/* Style des paragraphes */
 p {
-    font-size: 25px;
-    color: rgb(255, 255, 255);   
+    font-size: 1.25em;
+    color: #ffffff;
 }
 
-/*style du menu*/
-nav a{
-    float: left;
+/* Style du menu */
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: gold;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
     text-decoration: none;
     color: black;
-    background-color: gold;
-    height: 36px;
-    line-height: 33px;
-    padding: 0 10px;
-    font-family: sans-serif;
+    padding: 10px 15px;
     font-size: 13px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.image{
+.menu a:hover {
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+/* Assurer que les images sont responsives */
+img {
+    max-width: 100%;
+    height: auto;
     border-radius: 24px;
 }
 
+/* Style du conteneur d'éléments */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.item {
+    flex: 1 1 300px;
+    margin: 10px;
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style du footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
