@@ -1,0 +1,54 @@
+/* Styles par défaut pour les grands écrans */
+body {
+    background-color: #000000;
+    font-size: 16px;
+}
+
+/* Styles pour les écrans de taille moyenne */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        background-color: #000000;
+    }
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+        background-color: #000000;
+    }
+}  
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    color: gold;
+    text-align: center;
+}
+
+p {
+    font-size: 25px;
+    color: rgb(255, 255, 255);   
+}
+
+/*style du menu*/
+nav a{
+    float: left;
+    text-decoration: none;
+    color: black;
+    background-color: gold;
+    height: 36px;
+    line-height: 33px;
+    padding: 0 10px;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+.image{
+    border-radius: 24px;
+}
+
