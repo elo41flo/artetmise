@@ -1,100 +1,60 @@
-/* Réinitialiser les styles de base pour les marges et les bordures */
-body, ul {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Styles par défaut pour les grands écrans */
 body {
-    background-color: #000000;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #ffffff;
-    padding: 10px;
+    background-color: black;
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/* Styles pour les écrans de taille moyenne */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-}
-
-/* Styles pour les petits écrans */
-@media (max-width: 480px) {
-    body {
-        font-size: 12px;
-    }
-}
-
-/* Style des titres */
-h1 {
+h1, h3 {
     color: gold;
     text-align: center;
 }
 
-/* Style des paragraphes */
 p {
-    font-size: 1.25em;
-    color: #ffffff;
+    color: white;
+    text-align: center;
 }
 
-/* Style du menu */
+nav {
+    background-color: gold;
+    color: black;
+    text-align: center;
+}
+
 .menu {
-    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    background-color: gold;
-    padding: 0;
-    margin: 0;
 }
 
 .menu li {
     margin: 0 15px;
 }
 
-.menu a {
+
+.menu li a {
     text-decoration: none;
     color: black;
-    padding: 10px 15px;
-    font-size: 13px;
+    padding: 10px 20px;
+    display: block;
     transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
 }
 
-.menu a:hover {
-    background-color: darkgoldenrod;
+.menu li a:hover {
+    background-color: gold;
     color: white;
 }
 
-/* Assurer que les images sont responsives */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 24px;
-}
+/* Responsive styles */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* Style du conteneur d'éléments */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px 0;
-}
-
-.item {
-    flex: 1 1 300px;
-    margin: 10px;
-    background-color: #333;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Style du footer */
-footer {
-    text-align: center;
-    margin-top: 20px;
+    .menu li {
+        margin: 10px 0;
+    }
 }
