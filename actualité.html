@@ -42,6 +42,26 @@
 <br>
 <hr>
 <br>
+<script>
+    let currentIndex = 0; // Index de l'image actuelle
+
+    function moveSlide(direction) {
+        const images = document.querySelector('.carousel-images');
+        const totalImages = images.children.length;
+
+        currentIndex += direction;
+
+        // Boucler au début si on dépasse la dernière image
+        if (currentIndex < 0) {
+            currentIndex = totalImages - 1; // Si en-dessous de 0, revenir à la dernière image
+        } else if (currentIndex >= totalImages) {
+            currentIndex = 0; // Si dépasse la dernière, revenir à la première
+        }
+
+        const translateX = -currentIndex * 100; // Translation en pourcentage pour faire défiler
+        images.style.transform = `translateX(${translateX}%)`;
+    }
+</script>
 <footer>
     <p>© 2024 Art et Mise. Tous droits réservés.</p>
 </footer>
