@@ -47,6 +47,67 @@ nav {
     color: white;
 }
 
+/* Centrer l'image verticalement et horizontalement */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; /* Ajouter un peu de padding pour l'espacement */
+    box-sizing: border-box; /* Assurer que le padding soit inclus dans la taille totale */
+}
+
+/* Style de l'image avec bord arrondi et taille ajustée */
+img {
+    border-radius: 5%;       /* Bords arrondis à 5% */
+    max-width: 100%;         /* Image limitée à 100% du conteneur */
+    max-height: 100vh;       /* Limiter la hauteur maximale à celle de la fenêtre */
+    width: auto;             /* Conserver la proportion de la largeur */
+    height: auto;            /* Conserver la proportion de la hauteur */
+}
+
+
+/* Conteneur du carrousel */
+.carousel-container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Les images du carrousel */
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5%; /* Bord arrondi de 5% */
+}
+
+/* Boutons de navigation */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .menu {
