@@ -65,6 +65,20 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .hangman-display,
+        .word-display,
+        .letters {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -98,7 +112,7 @@
     <div id="hangman-display" class="hangman-display">
         <pre id="hangman-drawing"></pre>
     </div>
-
+<br>
     <!-- Le mot à trouver ensuite -->
     <div id="word-display" class="word-display"></div>
 

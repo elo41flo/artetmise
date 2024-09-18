@@ -1,4 +1,4 @@
-const words = ['javascript', 'developer', 'function', 'variable', 'object'];
+const words = ['peinture', 'pinceau', 'huile', 'toile', 'acrylique', 'palette', 'couleur', 'pigments', 'aquarelle', 'fusain', 'esquisse', 'realisme', 'vernis', 'impressionnisme', 'expressionnisme', 'chevalet', 'abstrait'];
 let chosenWord;
 let displayWord;
 let incorrectGuesses = 0;
