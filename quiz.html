@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Jeux</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .quiz-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centre horizontalement */
+            justify-content: center; /* Centre verticalement */
+            height: 100vh; /* Utilise toute la hauteur de la fenêtre */
+            text-align: center; /* Centre le texte */
+        }
+        
+        /* Conteneur des questions */
+        #question-container {
+            max-width: 600px; /* Limite la largeur pour un meilleur rendu */
+            width: 100%; /* Prend toute la largeur disponible */
+        }
+
+        button {
+            color: black;
+            background-color: gold;
+            border: none;
+        }
+
+        /* Style général des boutons */
+        .btn {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style pour la bonne réponse */
+        .btn.correct {
+            background-color: green;
+            color: white;
+        }
+
+        /* Style pour la mauvaise réponse */
+        .btn.wrong {
+            background-color: red;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <!--menu déroulant--> 
+<div class="menu-container">
+    <!-- Bouton pour ouvrir/fermer le menu -->
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="menu">
+        Menu
+      </button>
+    <button id="toggle-dark-mode">☻/☺</button>
+    <nav>
+        <ul class="menu" id="menu">    
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="événement.html">Evènement</a></li>
+            <li><a href="actualité.html">Actualités</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="vente.html">Vente</a></li>
+            <li><a href="mini-jeux.html">Mini-jeux</a></li>
+            <li><a href="renseignement et contact.html">Renseignement et contact</a></li>
+        </ul>
+    </nav>
+</div>
+<br>
+    <!-- Contenu de la page Quiz Basique -->
+    <div class="quiz-container">
+        <h1>Quiz</h1>
+        <div id="question-container">
+            <div id="question"></div>
+            <div id="answer-buttons"></div>
+            <button id="next-btn" style="display: none;">Suivant</button>
+        </div>
+    </div>
+    <script src="quiz.js"></script>
+    <script src="index.js"></script>
+<br>
+<hr>
+<br>
+<footer>
+        <p>© 2024 Art et Mise. Tous droits réservés.</p>
+</footer>
+</body>
+</html>

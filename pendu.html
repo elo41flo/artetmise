@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendu - Jeux</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .word-display {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        .hangman-display pre {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .letters {
+            margin: 20px 0;
+        }
+
+        .letter-button {
+            font-size: 1.2em;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #ddd;
+        }
+
+        .letter-button:hover {
+            background-color: #ccc;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+        }
+
+        .message {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+        <!--menu déroulant--> 
+<div class="menu-container">
+    <!-- Bouton pour ouvrir/fermer le menu -->
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="menu">
+        Menu
+      </button>
+    <button id="toggle-dark-mode">☻/☺</button>
+    <nav>
+        <ul class="menu" id="menu">    
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="événement.html">Evènement</a></li>
+            <li><a href="actualité.html">Actualités</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="vente.html">Vente</a></li>
+            <li><a href="mini-jeux.html">Mini-jeux</a></li>
+            <li><a href="renseignement et contact.html">Renseignement et contact</a></li>
+        </ul>
+    </nav>
+</div>
+<br>
+<!--Page pendu-->
+<!-- Le contenu du jeu en dessous du titre -->
+ <h1>Pendu</h1>
+<div class="container">
+    
+    <!-- Le contenu du jeu en dessous du titre -->
+    <!-- Le dessin du pendu en premier -->
+    <div id="hangman-display" class="hangman-display">
+        <pre id="hangman-drawing"></pre>
+    </div>
+
+    <!-- Le mot à trouver ensuite -->
+    <div id="word-display" class="word-display"></div>
+
+    <!-- Les lettres en dernier -->
+    <div id="letters" class="letters"></div>
+
+    <div id="message" class="message"></div>
+
+    <button id="restart-btn" style="display:none;">Rejouer</button>
+</div>
+<br>
+<hr>
+<br>
+<footer>
+        <p>© 2024 Art et Mise. Tous droits réservés.</p>
+</footer>
+<script src="index.js"></script>
+<script src="pendu.js"></script>
+</body>
+</html>

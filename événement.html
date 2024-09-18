@@ -11,23 +11,41 @@
 
 <body>
 <!--menu déroulant--> 
-<nav>
-    <ul class="menu">    
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="événement.html">Evènement</a></li>
-        <li><a href="actualité.html">Actualités</a></li>
-        <li><a href="renseignement et contact.html">Renseignement et contact</a></li>
-    </ul>
+<div class="menu-container">
+    <!-- Bouton pour ouvrir/fermer le menu -->
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="menu">
+      Menu
+    </button>
+    <button id="toggle-dark-mode">☻/☺</button>
+    <nav>
+        <ul class="menu" id="menu">    
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="événement.html">Evènement</a></li>
+            <li><a href="actualité.html">Actualités</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="vente.html">Vente</a></li>
+            <li><a href="mini-jeux.html">Mini-jeux</a></li>
+            <li><a href="renseignement et contact.html">Renseignement et contact</a></li>
+        </ul>
+    </div>
 </nav>
-
 <!--contenu de la page évènement-->
 <br>
 <br>
 <hr>
+<h1>Prochain évènement :</h1>
 <br>
-    <h1>Pas d'évènement à venir chez Art Et Mise</h1>
+<h2>Exposition du 19 au 27 août 2024 :</h2>
+<p>Retrouvenez nous à l'atelier pour cette exposition. </p>
+<br>
+<h2>Marché de Noël le 16 et 17 novembre 2024 :</h2>
+<p>Retrouvez nous à la salle des fêtes de Josnes pour cet évènement à la magie de Noël.</p>
+<br>
+<hr>
+<br>
 <footer>
         <p>© 2024 Art et Mise. Tous droits réservés.</p>
 </footer>
+<script src="index.js"></script>
 </body>
 </html>

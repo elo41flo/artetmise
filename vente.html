@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vente</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Conteneur de la galerie */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 colonnes */
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        /* Conteneur des images et des descriptions */
+        .gallery-item {
+            text-align: center;
+        }
+
+        /* Style des images */
+        .gallery-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        /* Zoom au survol */
+        .gallery-item:hover img {
+            transform: scale(1.2);
+        }
+
+        /* Description sous l'image */
+        .gallery-item p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Style des liens pour la version agrandie */
+        .gallery-item a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Fenêtre modale */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        /* Image à taille réelle dans la modale */
+        .modal img {
+            max-width: 90%;
+            max-height: 80%;
+        }
+
+        /* Description dans la modale */
+        .modal-description {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Bouton de fermeture */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!--menu déroulant--> 
+<div class="menu-container">
+    <!-- Bouton pour ouvrir/fermer le menu -->
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="menu">
+        Menu
+      </button>
+    <button id="toggle-dark-mode">☻/☺</button>
+    <nav>
+        <ul class="menu" id="menu">    
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="événement.html">Evènement</a></li>
+            <li><a href="actualité.html">Actualités</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="vente.html">Vente</a></li>
+            <li><a href="mini-jeux.html">Mini-jeux</a></li>
+            <li><a href="renseignement et contact.html">Renseignement et contact</a></li>
+        </ul>
+    </nav>
+</div>
+<br>
+<br>
+<!--contenu de la page des ventes-->
+<h1>Vente de nos tableaux</h1>
+<br>
+<br>
+<div class="gallery">
+    <!-- Exemples d'images -->
+    <div class="gallery-item">
+        <a href="image/IMG-20240912-WA0000.jpg" class="expand-image" data-image="image/IMG-20240912-WA0000.jpg" data-description="Aquarelle 24*32 cm 425g">
+            <img src="image/IMG-20240912-WA0000.jpg" alt="Tableau 1">
+            <p>Aquarelle sur Hahnemuhle 425g 24*32 cm. Par Jean-Paul Griffon. <br> 100 €</p>
+        </a>
+    </div>
+
+    <div class="gallery-item">
+        <a href="image/IMG-20240912-WA0001.jpg" class="expand-image" data-image="image/IMG-20240912-WA0001.jpg" data-description="Aquarelle 24*32 cm. 425g">
+            <img src="image/IMG-20240912-WA0001.jpg" alt="Tableau 2">
+            <p>Aquarelle sur toile 24*32 cm. Par Jean-Paul Griffon. <br> 145 €</p>
+        </a>
+    </div>
+
+    <div class="gallery-item">
+        <a href="image/IMG-20240912-WA0002.jpg" class="expand-image" data-image="image/IMG-20240912-WA0002.jpg" data-description="Acrylique sur toile 120*80 cm.  Femme...cocasse">
+            <img src="image/IMG-20240912-WA0002.jpg" alt="Tableau 3">
+            <p>Acrylique sur toile 120*80 cm. Par Jean-Paul Griffon. <br> 600 €</p>
+        </a>
+    </div>
+
+    <div class="gallery-item">
+        <a href="image/IMG-20240912-WA0003.jpg" class="expand-image" data-image="image/IMG-20240912-WA0003.jpg" data-description="Acrylique sur toile 120*80 cm.  Homme bleu, yeux josnes">
+            <img src="image/IMG-20240912-WA0003.jpg" alt="Tableau 4">
+            <p>Acrylique sur toile 120*80 cm. Par Jean-Paul Griffon. <br> 600 €</p>
+        </a>
+    </div>
+
+    <div class="gallery-item">
+        <a href="image/IMG-20240912-WA0004.jpg" class="expand-image" data-image="image/IMG-20240912-WA0004.jpg" data-description="Acrylique sur toile 120*80 cm.  NYC. Mira Mamy a flower">
+            <img src="image/IMG-20240912-WA0004.jpg" alt="Tableau 5">
+            <p>Acrylique sur toile 120*80 cm. Par Jean-Paul Griffon. <br> 600 €</p>
+        </a>
+    </div>
+    
+    <div class="gallery-item">
+        <a href="image/IMG-20240913-WA0006.jpg" class="expand-image" data-image="image/IMG-20240913-WA0006.jpg" data-description="Acrylique sur toile 120*80 cm. Cité">
+            <img src="image/IMG-20240913-WA0006.jpg" alt="Tableau 6">
+            <p>Acrylique sur toile 120*80 cm. Par Jean-Paul Griffon. <br> 600 €</p>
+        </a>
+    </div>
+
+    <div class="gallery-item">
+        <a href="image/IMG-20240913-WA0007.jpg" class="expand-image" data-image="image/IMG-20240913-WA0007.jpg" data-description="Acrylique sur toile 120*80 cm. Touche et cadre">
+            <img src="image/IMG-20240913-WA0007.jpg" alt="Tableau 7">
+            <p>Acrylique sur toile 120*80 cm. Par Jean-Paul Griffon. <br> 600 €</p>
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="image/20240914_135003.jpg" class="expand-image" data-image="image/20240914_135003.jpg" data-description="Huile sur toile 50*80 cm. Portrait sombre">
+            <img src="image/20240914_135003.jpg" alt="Tableau 8">
+            <p>Huile sur toile 50*40 cm. Par Elo Robert <br> 100 €</p>
+        </a>
+    </div>
+</div>
+
+<!-- Modale pour afficher l'image à 100% -->
+<div class="modal" id="imageModal">
+    <span class="close">&times;</span>
+    <div class="modal-description" id="modalDescription"></div>
+    <img id="modalImage" src="" alt="Image agrandie">
+</div>
+
+<script>
+    // Script pour la modal
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const modalDesc = document.getElementById("modalDescription");
+    const closeBtn = document.querySelector(".close");
+
+    // Quand l'utilisateur clique sur une image
+    document.querySelectorAll(".expand-image").forEach(item => {
+        item.addEventListener("click", function(event) {
+            event.preventDefault();
+            const imgSrc = this.getAttribute("data-image");
+            const imgDesc = this.getAttribute("data-description");
+            modal.style.display = "flex";
+            modalImg.src = imgSrc;
+            modalDesc.textContent = imgDesc; // Ajouter la description dans la modale
+        });
+    });
+
+    // Fermer la modale en cliquant sur le bouton de fermeture
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    // Fermer la modale en cliquant n'importe où en dehors de l'image
+    modal.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+</script>
+<script src="index.js"></script>
+<br>
+<hr>
+<br>
+<footer>
+        <p>© 2024 Art et Mise. Tous droits réservés.</p>
+</footer>
+</body>
+</html>

@@ -1,17 +1,18 @@
-body {
-    background-color: black;
-    color:white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 
 h1, h3 {
     color: gold;
     text-align: center;
+    font-family: 'ink free', sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: gold;
 }
 
 p {
-    color: white;
     text-align: center;
+    font-family: 'corbel', sans-serif;
 }
 
 nav {
@@ -20,31 +21,77 @@ nav {
     text-align: center;
 }
 
+/* Conteneur pour aligner les boutons horizontalement */
+.menu-container {
+    position: fixed; /* Pour le maintenir visible lors du défilement */
+    top: 10px; /* Positionné à 10px du haut */
+    left: 10px; /* Positionné à 10px de la gauche */
+    display: flex; /* Utiliser Flexbox pour l'alignement horizontal */
+    gap: 10px; /* Espace entre les boutons */
+    z-index: 1000; /* Assure que le conteneur reste au-dessus des autres éléments */
+}
+
+/* Styles pour le bouton Menu */
+.menu-button {
+    padding: 10px 20px;
+    background-color: gold;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5%; /* Bord arrondi */
+}
+
+/* Styles pour le bouton Mode sombre/clair */
+#toggle-dark-mode {
+    padding: 10px 20px;
+    background-color: gold; /* Bleu pour le contraste avec le bouton Menu */
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5%; /* Bord arrondi */
+}
+
+/* Styles pour le menu */
 .menu {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
+    margin: 10px 0 0;
+    display: none; /* Masqué par défaut */
+    position: fixed; /* Fixe le menu sous le conteneur des boutons */
+    top: 50px; /* Place le menu juste en dessous des boutons */
+    left: 10px; /* Aligné avec les boutons à gauche */
+    background-color: gold;
+    border: 1px solid #ccc;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 999; /* Assure que le menu reste visible */
 }
 
+/* Styles pour chaque élément du menu */
 .menu li {
-    margin: 0 15px;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    background-color: gold;
+    color: black;
+    text-align: left;
 }
 
+.menu li:last-child {
+    border-bottom: none;
+}
 
+.menu li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Enlever le soulignement des liens dans le menu */
 .menu li a {
     text-decoration: none;
     color: black;
-    padding: 10px 20px;
     display: block;
-    transition: background-color 0.3s, color 0.3s;
-    border-radius: 5px;
-}
-
-.menu li a:hover {
-    background-color: gold;
-    color: white;
+    padding: 10px;
 }
 
 /* Centrer l'image verticalement et horizontalement */
@@ -52,20 +99,18 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     padding: 20px; /* Ajouter un peu de padding pour l'espacement */
     box-sizing: border-box; /* Assurer que le padding soit inclus dans la taille totale */
 }
 
 /* Style de l'image avec bord arrondi et taille ajustée */
 img {
-    border-radius: 5%;       /* Bords arrondis à 5% */
-    max-width: 100%;         /* Image limitée à 100% du conteneur */
-    max-height: 100vh;       /* Limiter la hauteur maximale à celle de la fenêtre */
-    width: auto;             /* Conserver la proportion de la largeur */
-    height: auto;            /* Conserver la proportion de la hauteur */
+    border-radius: 5%; /* Bords arrondis à 5% */
+    max-width: 100%; /* Image limitée à 100% du conteneur */
+    max-height: 100vh; /* Limiter la hauteur maximale à celle de la fenêtre */
+    width: auto; /* Conserver la proportion de la largeur */
+    height: auto; /* Conserver la proportion de la hauteur */
 }
-
 
 /* Conteneur du carrousel */
 .carousel-container {
@@ -87,25 +132,140 @@ img {
     border-radius: 5%; /* Bord arrondi de 5% */
 }
 
+:root {
+    --background-color: white;
+    --text-color: black;
+}
+
+.dark-mode {
+    --background-color: #121212;
+    --text-color: white;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
 /* Boutons de navigation */
 .prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(0, 0, 0);
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
     font-size: 18px;
+    border-radius: 5px; /* Bord arrondi pour les boutons */
+    z-index: 1000; /* Assure que les boutons sont au-dessus des images */
 }
 
 .prev {
-    left: 10px;
+    left: 10px; /* Positionne le bouton à gauche */
 }
 
 .next {
-    right: 10px;
+    right: 10px; /* Positionne le bouton à droite */
+}
+
+/* Styles pour la galerie */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 images par ligne */
+    gap: 10px; /* Espacement entre les images */
+    padding: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+/* Styles pour le modal */
+.modal {
+    display: none; /* Cacher par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 20px;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80vh;
+    margin: auto;
+    display: block;
+}
+
+.caption {
+    color: #f1f1f1;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.games-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.game {
+    background-color: #fff;
+    width: 200px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.game:hover {
+    transform: scale(1.05);
+}
+
+.game img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.game-title {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 /* Responsive styles */

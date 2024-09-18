@@ -1,69 +1,144 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 
-    <head>
+<head>
     <meta charset="UTF-8">
     <title>Actualité</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    </head>
-
-    <body>
-<!--menu déroulant--> 
-<nav>
-    <ul class="menu">    
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="événement.html">Evènement</a></li>
-        <li><a href="actualité.html">Actualités</a></li>
-        <li><a href="renseignement et contact.html">Renseignement et contact</a></li>
-    </ul>
-</nav>
-
-<br>
-<br>
-<hr>
-<br>
-<br>
-<!--image de l'atelier-->
-<div class="carousel-container">
-    <div class="carousel-images">
-<img src="image\Snapchat-1411746197.jpg"> 
-<img src="image\Snapchat-622807654.jpg"> 
-<img src="image\Snapchat-2139448571.jpg"">
-    </div>
-    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="next" onclick="moveSlide(1)">&#10095;</button>
-</div>
-<br>
-<br>
-<p>Voici quelques photos qui ont été prises pour les portes ouvertes du 14 juin 2024</p>
-<br>
-<br>
-<hr>
-<br>
-<script>
-    let currentIndex = 0; // Index de l'image actuelle
-
-    function moveSlide(direction) {
-        const images = document.querySelector('.carousel-images');
-        const totalImages = images.children.length;
-
-        currentIndex += direction;
-
-        // Boucler au début si on dépasse la dernière image
-        if (currentIndex < 0) {
-            currentIndex = totalImages - 1; // Si en-dessous de 0, revenir à la dernière image
-        } else if (currentIndex >= totalImages) {
-            currentIndex = 0; // Si dépasse la dernière, revenir à la première
+    <style>
+        /* Styles pour le carrousel */
+        .carousel-container {
+            position: relative;
+            width: 80%; /* Ajuste cette valeur pour modifier la largeur du carrousel */
+            margin: 0 auto;
+            overflow: hidden; /* Masque les images qui dépassent */
         }
 
-        const translateX = -currentIndex * 100; // Translation en pourcentage pour faire défiler
-        images.style.transform = `translateX(${translateX}%)`;
-    }
-</script>
-<footer>
-    <p>© 2024 Art et Mise. Tous droits réservés.</p>
-</footer>
-    </body>
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            /* Ajuster la largeur de chaque image en fonction du nombre visible */
+            width: calc(300px * 6); /* Largeur totale, ici 6 images de 300px */
+        }
+
+        .carousel-images img {
+            width: 300px;
+            height: auto;
+            margin-right: 10px; /* Espacement entre les images */
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--menu déroulant-->
+    <div class="menu-container">
+        <!-- Bouton pour ouvrir/fermer le menu -->
+        <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="menu">Menu</button>
+        <button id="toggle-dark-mode">☻/☺</button>
+        <nav>
+            <ul class="menu" id="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="événement.html">Evènement</a></li>
+                <li><a href="actualité.html">Actualités</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="vente.html">Vente</a></li>
+                <li><a href="mini-jeux.html">Mini-jeux</a></li>
+                <li><a href="renseignement et contact.html">Renseignement et contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <br><br><hr><br><br>
+    <h1>Nos actualités</h1><br><br>
+
+    <!-- Premier carrousel -->
+    <div class="carousel-container" id="carousel1">
+        <div class="carousel-images">
+            <img src="image/image carousel/20240906_090537.jpg" alt="image 1">
+            <img src="image/image carousel/20240906_090552.jpg" alt="image 2">
+            <img src="image/image carousel/20240906_090613.jpg" alt="image 3">
+            <img src="image/image carousel/20240906_090617.jpg" alt="image 4">
+            <img src="image/image carousel/20240906_090625.jpg" alt="image 5">
+            <img src="image/image carousel/20240906_090628.jpg" alt="image 6">
+        </div>
+        <button class="prev" onclick="moveSlide(-1, 'carousel1')">&#10094;</button>
+        <button class="next" onclick="moveSlide(1, 'carousel1')">&#10095;</button>
+    </div>
+
+    <br><br>
+    <p>Voici quelques photos qui ont été prises lors des travaux de l'atelier.</p><br><br>
+
+    <!-- Deuxième carrousel -->
+    <div class="carousel-container" id="carousel2">
+        <div class="carousel-images">
+            <img src="image/image carousel/20240906_090633.jpg" alt="image 1">
+            <img src="image/image carousel/20240906_090644.jpg" alt="image 2">
+            <img src="image/image carousel/20240906_091139.jpg" alt="image 3">
+            <img src="image/image carousel/20240906_091146.jpg" alt="image 4">
+            <img src="image/image carousel/20240906_091200.jpg" alt="image 5">
+            <img src="image/image carousel/20240906_091209.jpg" alt="image 6">
+        </div>
+        <button class="prev" onclick="moveSlide(-1, 'carousel2')">&#10094;</button>
+        <button class="next" onclick="moveSlide(1, 'carousel2')">&#10095;</button>
+    </div>
+
+    <br><br>
+    <p>Quelques photos de l'exposition du 14 juin 2024.</p><br><br><hr><br>
+
+    <footer>
+        <p>© 2024 Art et Mise. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Fonction pour déplacer les slides d'un carrousel spécifique
+        function moveSlide(direction, carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const images = carousel.querySelector('.carousel-images');
+            const totalImages = images.children.length;
+            const imagesToShow = 3; // Nombre d'images visibles
+            const imageWidth = 310; // Largeur de l'image (300px + 10px de margin)
+
+            let currentIndex = parseInt(carousel.getAttribute('data-current-index')) || 0;
+
+            currentIndex += direction;
+
+            // Limiter l'index
+            if (currentIndex < 0) {
+                currentIndex = totalImages - imagesToShow; // Revenir au début
+            } else if (currentIndex > totalImages - imagesToShow) {
+                currentIndex = 0; // Revenir à la première image
+            }
+
+            const translateX = -currentIndex * imageWidth; // Translation en pixels
+            images.style.transform = `translateX(${translateX}px)`;
+
+            // Mettre à jour l'index actuel
+            carousel.setAttribute('data-current-index', currentIndex);
+        }
+    </script>
+    <script src="index.js"></script>
+</body>
+
 </html>

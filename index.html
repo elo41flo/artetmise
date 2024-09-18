@@ -1,38 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <title> Art Et Mise - Page d'accueil</title>
+    <title> Art Et Mise Josnes</title>
     <link rel="stylesheet" href="index.css">
+    <meta name="description" content="Art et Mise, association d'art où débutants et artistes confirmés se retrouvent pour exposer leurs talents de peintre. Rejoignez-nous pour partager votre passion !">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 <!--menu déroulant--> 
-<nav>
-    <ul class="menu">    
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="événement.html">Evènement</a></li>
-        <li><a href="actualité.html">Actualités</a></li>
-        <li><a href="renseignement et contact.html">Renseignement et contact</a></li>
-    </ul>
+<!-- Conteneur du menu -->
+<div class="menu-container">
+    <!-- Bouton pour ouvrir/fermer le menu -->
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="menu">
+      Menu
+    </button>
+    <button id="toggle-dark-mode">☻/☺</button>
+    <nav>
+        <ul class="menu" id="menu">    
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="événement.html">Evènement</a></li>
+            <li><a href="actualité.html">Actualités</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="vente.html">Vente</a></li>
+            <li><a href="mini-jeux.html">Mini-jeux</a></li>
+            <li><a href="renseignement et contact.html">Renseignement et contact</a></li>
+        </ul>
+    </div>
 </nav>
-
-<br>
-<br>
 <!--contenu de la page d'accueil-->
-<hr>
 <br>
-    <h1>Bienvenue sur Art Et Mise</h1>
+<br>
+<br>
+    <h1>Art Et Mise Josnes</h1>
 <br>
 <hr>
+    <br>
     <p><strong><center>Atelier de peinture (aquarelle, acrylique et peinture à l'huile) et de dessin.</center></strong></p>
     <div class="container">
     <img src="image\image site mairie.jpg">
     </div>
-<br>
 <br>
 <hr>
 <br>
@@ -41,6 +50,16 @@
     <p>de la créativité à travers l'organisation d'ateliers de peinture pour tous les âges et tous les niveaux.</p>
     <p>Notre objectif ? Offrir à chacun la possibilité de s'exprimer dans le domaine artistique,</p>
     <p>quel que soit sa préférence dans le type de peinture</p>
+<br>
+<hr>
+<br>
+    <p>Ce que l'on vous propose sur notre site ?</p>
+    <p>Dans la partie Evènement vous pourrez retrouvé tout nos évènement à l'atelier (exposition, portes ouvertes, etc)</p>
+    <p>Dans les actualités, un ensemble de photos de l'atelier pour montrer l'avancement de notre association.</p>
+    <p>Dans la galerie, des photos des tableaux des membres de l'atelier.</p>
+    <p>Dans la partie vente, nous vous proposons quelques tableaux à vendre. A vous de prendre contact si vous avez des questions sur le tableau qui vous intéresses.</p>
+    <p>Dans la partei mini-jeu, vous y trouverez des jeux à faire au tour de l'art (des quiz, vous pourez créer vos pixel art, etc).</p>
+    <p>On vous demandes, si vous le souhaitez et pouvez nous faire un dons pour nous encouragez et faire évolué notre atelier. Le lien de la cagnotte est dans la partie actualité.</p>
 <br>
 <hr>
 <br>
@@ -53,17 +72,10 @@
 <hr>
 <br>
 <br>
-    <div class="container">
-    <img src="image\coin atelier.jpg">
-    </div>
-<br>
-<br>
-<hr>
-<br>
 <footer>
     <p>© 2024 Art et Mise. Tous droits réservés.</p>
 </footer>
-
+<script src="index.js"></script>
 </body>
 </html>
 
