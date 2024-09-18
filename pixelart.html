@@ -3,14 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jeu de Pixel Art</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- Inclure les bibliothèques jsPDF et html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-    <br>
-<hr>
-<br>
-<footer>
-        <p>© 2024 Art et Mise. Tous droits réservés.</p>
-</footer>
+
+    <h1>Crée ton Pixel Art</h1>
+
+    <!-- Palette de couleurs -->
+    <div id="palette">
+        <label for="colorPicker">Choisis ta couleur :</label>
+        <input type="color" id="colorPicker" value="#000000">
+    </div>
+
+    <!-- Section pour choisir la taille de la grille -->
+    <div id="gridSizeSelector">
+        <label for="gridSize">Choisis la taille de la grille :</label>
+        <input type="number" id="gridSize" value="16" min="2" max="100">
+        <button id="generateGridButton">Générer la grille</button>
+    </div>
+
+    <!-- Boutons pour les actions -->
+    <div id="actions">
+        <button id="resetButton">Réinitialiser la Grille</button>
+        <button id="saveButton">Enregistrer en PDF</button>
+    </div>
+
+    <!-- Grille de pixel art -->
+    <div id="pixelCanvas"></div>
+
+    <script src="pixelart.js"></script>
 </body>
 </html>
