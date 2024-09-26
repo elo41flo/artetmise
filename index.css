@@ -268,6 +268,21 @@ body {
     font-weight: bold;
 }
 
+  .social-links a {
+    margin-right: 10px; /* Ajoute un espace entre les icônes */
+    text-decoration: none; /* Supprime le soulignement des liens */
+
+  }
+
+  .social-links i {
+    transition: transform 0.3s ease; /* Ajoute une transition */
+  }
+
+  .social-links a:hover i {
+    transform: scale(1.2); /* Agrandit l'icône au survol */
+  }
+
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .menu {
